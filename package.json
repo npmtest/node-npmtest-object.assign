@@ -1,1 +1,39 @@
-{     "devDependencies": {         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-object.assign",     "homepage": "https://github.com/npmtest/node-npmtest-object.assign",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-object.assign.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### basic test coverage for  object.assign (v4.0.4)  [![npm package](https://img.shields.io/npm/v/npmtest-object.assign.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-object.assign) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-object.assign.svg)](https://travis-ci.org/npmtest/node-npmtest-object.assign)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-object.assign",
+    "keywords": [
+        "coverage",
+        "test",
+        "object.assign"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_object.assign.js",
+    "name": "npmtest-object.assign",
+    "nameAlias": "npmtest_object_assign",
+    "nameOriginal": "npmtest-object.assign",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-object.assign.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
